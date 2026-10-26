@@ -12,6 +12,9 @@ def je_tah_mozny_pesec(cilova_pozice, aktualni_pozice, obsazene_pozice):
 
 
 def je_tah_mozny_jezdec(cilova_pozice, aktualni_pozice, obsazene_pozice):
+    if cilova_pozice in obsazene_pozice:
+        return False
+    
     for i in [1, 2]:
         if abs(aktualni_pozice[0] - cilova_pozice[0]) == 1 and abs(aktualni_pozice[1] - cilova_pozice[1]) == 2:
             return True
@@ -79,7 +82,6 @@ def je_tah_mozny(figurka, cilova_pozice, obsazene_pozice):
             bez_sebe.append(pole)
 
     # pro strelec: jeden smer
-    #вправо вверх по диагонали
     akt_to_cil_radek = cilova_pozice[0] - aktualni_pozice[0]
     akt_to_cil_sloupec = cilova_pozice[1] - aktualni_pozice[1]
 
